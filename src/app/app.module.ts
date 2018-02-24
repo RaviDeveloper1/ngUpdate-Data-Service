@@ -8,6 +8,8 @@ import { TwoComponent } from './components/two/two.component';
 
 import { UsersService } from './services/users.service';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,8 @@ import { UsersService } from './services/users.service';
     TwoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]

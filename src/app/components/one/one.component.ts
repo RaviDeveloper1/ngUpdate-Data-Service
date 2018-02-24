@@ -9,10 +9,15 @@ import { UsersService } from '../../services/users.service';
 })
 export class OneComponent implements OnInit {
   user: any;
+  editUser: any;
   constructor(private usersService: UsersService) { }
 
   ngOnInit() {
     this.usersService.cast.subscribe(user => this.user = user );
+  }
+
+  editTheUser() {
+    this.usersService.editUser(this.editUser);
   }
 
 }
