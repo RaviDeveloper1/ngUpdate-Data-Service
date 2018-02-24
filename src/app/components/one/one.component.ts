@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../../services/users.service';
+
 
 @Component({
   selector: 'app-one',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./one.component.css']
 })
 export class OneComponent implements OnInit {
-
-  constructor() { }
+  user: any;
+  constructor(private usersService: UsersService) { }
 
   ngOnInit() {
+    this.usersService.cast.subscribe(user => this.user = user );
   }
 
 }
